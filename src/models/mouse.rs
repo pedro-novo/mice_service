@@ -1,6 +1,7 @@
 
 use serde::{Deserialize, Serialize};
 use diesel::{Queryable, Insertable, AsChangeset};
+use chrono::NaiveDate;
 
 #[derive(Serialize, Deserialize, Debug, Clone, Queryable, Insertable, AsChangeset)]
 #[diesel(table_name = crate::repository::schema::mice)]
@@ -21,5 +22,5 @@ pub struct Mouse {
     pub switches: Option<String>,
     pub mouse_wheel_encoder: Option<String>,
     pub material: String,
-    pub launch_date: Option<chrono::NaiveDateTime>,
+    pub launch_date: Option<NaiveDate>,
 }

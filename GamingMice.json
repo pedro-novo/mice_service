@@ -1,0 +1,58 @@
+[
+  {
+    "brand": "Razer",
+    "model": "Deathadder V3 Pro",
+    "width": [68.0, 1.0, 1.0],
+    "height": [44.0, 1.0, 1.0],
+    "length": 128.0,
+    "weight": 63,
+    "shape": "Ergonomic RH",
+    "wireless": true,
+    "sensor": "Focus Pro 30K Optical Sensor",
+    "mcu": "Nordic nRF52840",
+    "dpi": "30000",
+    "polling_rate": "up to 4000Hz",
+    "switches": "Optical Mouse Switches Gen-3",
+    "mouse_wheel_encoder": "EN281046",
+    "material": "PLASTIC",
+    "launch_date": "2022-08-02"
+  },
+
+  {
+    "brand": "Razer",
+    "model": "Viper Mini Signature Edition",
+    "width": [62.0, 1.0, 1.0],
+    "height": [39.0, 1.0, 1.0],
+    "length": 119.0,
+    "weight": 61,
+    "shape": "Ergonomic RH",
+    "wireless": true,
+    "sensor": "Focus Pro 30K Optical Sensor",
+    "mcu": "?Nordic nRF52840?",
+    "dpi": "30000",
+    "polling_rate": "up to 8000Hz",
+    "switches": "Optical Mouse Switches Gen-3",
+    "mouse_wheel_encoder": "?EN281046?",
+    "material": "MAGNESIUM",
+    "launch_date": "2023-04-21"
+  },
+
+  {
+    "brand": "Logitech",
+    "model": "PRO X SUPERLIGHT",
+    "width": [63.5, 1.0, 1.0],
+    "height": [40.0, 1.0, 1.0],
+    "length": 125.0,
+    "weight": 63,
+    "shape": "Ergonomic RH",
+    "wireless": true,
+    "sensor": "HERO",
+    "mcu": "?ARM PROCESSOR?",
+    "dpi": "25600",
+    "polling_rate": "up to 1000Hz",
+    "switches": "20M White Omrons",
+    "mouse_wheel_encoder": "?EN281046?",
+    "material": "PLASTIC",
+    "launch_date": "2020-12-3"
+  }
+]

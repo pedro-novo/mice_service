@@ -18,6 +18,6 @@ diesel::table! {
         switches -> Nullable<Varchar>,
         mouse_wheel_encoder -> Nullable<Varchar>,
         material -> Text,
-        launch_date -> Nullable<Timestamp>,
+        launch_date -> Nullable<Date>,
     }
 }

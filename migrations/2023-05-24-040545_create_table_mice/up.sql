@@ -15,5 +15,5 @@ CREATE TABLE mice (
   switches VARCHAR(255),
   mouse_wheel_encoder VARCHAR(255),
   material TEXT CHECK(material IN ('PLASTIC', 'MAGNESIUM')) DEFAULT 'PLASTIC' NOT NULL,
-  launch_date TIMESTAMP
+  launch_date DATE
 )

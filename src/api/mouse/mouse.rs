@@ -2,12 +2,28 @@ use actix_web::web;
 use actix_web::{web::{
     Data,
     Json,
+    Query,
 }, get, post, put, delete, HttpResponse};
+use serde::{Deserialize, Serialize};
 use crate::{models::mouse::Mouse, repository::database::Database};
 
+#[derive(Serialize, Deserialize, Debug, Clone, Default)]
+pub struct QueryParams {
+    pub brand: Option<String>,
+    pub shape: Option<String>,
+}
+
+impl QueryParams {
+    pub fn new(brand: Option<String>, shape: Option<String>) -> QueryParams {
+        QueryParams { brand, shape }
+    }
+}
+
+
 #[get("")]
-pub async fn get_mice(db: Data<Database>) -> HttpResponse {
-    let mice = db.get_mice();
+pub async fn get_mice(db: Data<Database>, params: Query<QueryParams>) -> HttpResponse {
+    let Query(params) = params;
+    let mice = db.get_mice(params.brand, params.shape);
     HttpResponse::Ok().json(mice)
 }
 

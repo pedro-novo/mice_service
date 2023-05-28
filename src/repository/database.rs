@@ -23,10 +23,23 @@ impl Database {
         Database { pool }
     }
 
-    pub fn get_mice(&self) -> Vec<Mouse> {
-        mice
-            .load::<Mouse>(&mut self.pool.get().unwrap())
-            .expect("Error loading all mice.")
+    pub fn get_mice(&self, brand_query: Option<String>, shape_query: Option<String>) -> Vec<Mouse> {
+        let connection = &mut self.pool.get().unwrap();
+   
+        let mut query = mice.into_boxed();
+
+        if let Some(brand_query) = brand_query {
+            query = query.filter(brand.eq(brand_query));
+        }
+
+        if let Some(shape_query) = shape_query {
+            println!("{}", shape_query);
+            query = query.filter(shape.eq(shape_query));
+        }
+
+        query
+            .load::<Mouse>(connection)
+            .expect("Error loading mice.")
     }
 
     pub fn create_mouse(&self, mouse: Mouse) -> Result<Mouse, Error> {

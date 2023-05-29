@@ -1,6 +1,7 @@
 mod repository;
 mod models;
 mod api;
+mod config;
 
 use actix_cors::Cors;
 use actix_web::http::header;
@@ -10,7 +11,7 @@ use actix_web::{web, App, HttpServer};
 async fn main() -> std::io::Result<()> {
     let mouse_db = repository::database::Database::new();
     let app_data = web::Data::new(mouse_db);
-    let fe_url = std::env::var("FE_APP_URL").expect("FE_APP_URL must be set");
+    let cfg = config::config::Config::init();
 
     HttpServer::new(move || 
         App::new()
@@ -19,7 +20,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(actix_web::middleware::Logger::default())
             .wrap(
                 Cors::default()
-                    .allowed_origin(&fe_url)
+                    .allowed_origin(&cfg.client_origin)
                     .allowed_methods(vec!["GET", "POST", "PUT", "DELETE"])
                     .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
                     .allowed_header(header::CONTENT_TYPE)

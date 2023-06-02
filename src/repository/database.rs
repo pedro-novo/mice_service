@@ -3,7 +3,7 @@ use diesel::prelude::*;
 use diesel::r2d2::{self, ConnectionManager};
 use dotenv::dotenv;
 
-use crate::models::mouse::Mouse;
+use crate::models::mouse::mouse::Mouse;
 use crate::repository::schema::mice::dsl::*;
 
 pub type DBPool = r2d2::Pool<ConnectionManager<PgConnection>>;

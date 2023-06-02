@@ -21,3 +21,16 @@ diesel::table! {
         launch_date -> Nullable<Date>,
     }
 }
+
+diesel::table! {
+    users (id) {
+        id -> Varchar,
+        username -> Varchar,
+        password -> Varchar,
+    }
+}
+
+diesel::allow_tables_to_appear_in_same_query!(
+    mice,
+    users,
+);

@@ -5,7 +5,7 @@ use actix_web::{web::{
     Query,
 }, get, post, put, delete, HttpResponse};
 use serde::{Deserialize, Serialize};
-use crate::{models::mouse::Mouse, repository::database::Database};
+use crate::{models::mouse::mouse::Mouse, repository::database::Database};
 
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct QueryParams {
